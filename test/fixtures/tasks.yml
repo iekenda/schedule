@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  starting: 2023-04-10
+  ending: 2023-04-10
+  all: false
+  updated: 2023-04-10 15:02:24
+
+two:
+  title: MyString
+  starting: 2023-04-10
+  ending: 2023-04-10
+  all: false
+  updated: 2023-04-10 15:02:24
