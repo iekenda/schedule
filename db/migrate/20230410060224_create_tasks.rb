@@ -6,8 +6,6 @@ class CreateTasks < ActiveRecord::Migration[6.1]
       t.date :ending
       t.boolean :all
       t.datetime :updated
-      t.text :memo
-      
 
       t.timestamps
     end
