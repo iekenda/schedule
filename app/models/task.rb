@@ -8,8 +8,8 @@ class Task < ApplicationRecord
    validate :date_before_start
 
   def start_end_check
-    starting ||= 1
-    ending ||= 2
+    starting ||= 2
+    ending ||= 1
 
     errors.add(:ending, "は開始日より前の日付は登録できません。") unless
     starting < ending 
