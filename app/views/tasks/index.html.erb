@@ -1,0 +1,43 @@
+<h3>予定一覧</h3>
+
+ <% if flash[:notice] %>
+   <p class="notice"><%= flash[:notice] %></p>
+ <% end %>
+ 
+ <table>
+   <thead>
+     <tr>
+       <th>id</th>
+       <th>タイトル</th>
+       <th>開始日</th>
+       <th>終了日</th>
+       <th>終日</th>
+       <th>更新日時</th>
+     </tr>
+   </thead>
+ 
+   <tbody>
+     <% @tasks.each do |task| %>
+       <tr>
+         <td><%= task.id %></td>
+         <td><%= task.title %></td>
+         <td><%= task.starting.strftime("%Y/%m/%d")  %></td>
+         <td><%= task.ending.strftime("%Y/%m/%d") %></td>
+         <td><%= task.all ? "○" : nil %></td>
+         <td><%= task.updated_at.strftime("%Y/%m/%d %H:%M:%S") %></td>
+         <td><%= link_to "詳細",task %></td>
+         <td><%= link_to "編集", [:edit, task] %></td>
+         <td><%= link_to "削除", task, method: :delete,data: {confirm: "本当に削除しますか？" } %></td>
+       </tr>
+     <% end %>
+  
+   </tbody>
+ </table>
+
+ <div class ="information">
+    <%= "合計予定数：#{@tasks.count}件" %>
+    <%= "本日の日付：#{Date.today}" %>
+  </div>
+</div>
+ 
+ <p><%= link_to "新規追加", :new_task %></p>
